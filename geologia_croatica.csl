@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Geologia_croatica)</title>
+    <id>http://www.zotero.org/styles/Geologia_croatica</id>
+    <link href="http://www.zotero.org/styles/geomorphology" rel="self"/>
+    <author>
+      <name>Custom CSL by ChatGPT</name>
+    </author>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name form="long" name-as-sort-order="first" sort-separator=", " delimiter=" & " initialize-with=".">
+        <name-part name="family" text-case="uppercase"/>
+        <name-part name="given" text-case="uppercase"/>
+      </name>
+      <label form="short" prefix=" " text-case="lowercase"/>
+      <et-al font-style="normal"/> <!-- keep et al. lowercase -->
+    </names>
+  </macro>
+
+  <macro name="year">
+    <date variable="issued" prefix=" (" suffix="):">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <macro name="container-title">
+    <group delimiter="">
+      <text value="– "/>
+      <text variable="container-title" font-style="italic"/>
+    </group>
+  </macro>
+
+  <macro name="volume-issue">
+    <group delimiter="/">
+      <text variable="volume" font-weight="bold"/>
+      <text variable="issue"/>
+    </group>
+  </macro>
+
+  <macro name="pages">
+    <text variable="page" prefix=", "/>
+  </macro>
+
+  <macro name="doi">
+    <text variable="DOI" prefix=". https://doi.org/"/>
+  </macro>
+
+  <citation>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <text macro="author"/>
+      <text macro="year"/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout suffix=".">
+      <text macro="author"/>
+      <text macro="year"/>
+      <text macro="title" suffix=". "/>
+      <text macro="container-title"/>
+      <text macro="volume-issue"/>
+      <text macro="pages"/>
+      <text macro="doi"/>
+    </layout>
+  </bibliography>
+</style>
